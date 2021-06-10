@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./headPartial')%> 
+    <title>Digital Movies: Usuarios</title>
+</head>
+<body>
+    <%- include('./header')%> 
+
+    <main>
+        <h1>Digital Movies</h1>
+        <article>
+            <ul class="users-list">
+             <% users.forEach(user => { %>
+                <li><a href="/allUsuarios/<%= user.id%>">Id:<%= user.id%>), email: <%= user.email%></a></li>
+             <% }) %>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>

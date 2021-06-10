@@ -1,0 +1,18 @@
+div p{
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.admin{
+    display: flex;
+}
+
+.perfil{
+    margin: auto;
+    width: 50%;
+    height: 150px;
+    background: #212e36;
+    color: #eff3f5;
+    padding: 20px;
+    border-radius: 10px;
+}

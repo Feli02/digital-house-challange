@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('./headPartial')%> 
+
+    <title>Digital Movies: <%= Userfind.id%></title>
+</head>
+<body>
+    <%- include('./header')%> 
+    <h1 class="titulo">Editando:  <%= Userfind.id %></h1>
+    <section class="formulario">
+        <form action="/allUsuarios/update/<%= Userfind.id %>" method="POST">
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name" id="name" value="<%= Userfind.name %>" required></p>
+            <label for="email">Email </label>
+            <p><input type="email" name="email" id="email" value="<%= Userfind.email %>" required></p> 
+            <label for="rol">Rol </label>
+            <p><input type="number" name="rol" id="rol" value="<%= Userfind.rol %>" required></p> 
+               
+            
+            <p> <button class="botonAgregar" type="submit">Actualizar</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('./headPartial')%>
+
+    <title>Digital Movies: LogIn</title>
+</head>
+<body>
+    <%- include('./header')%> 
+    <h1>LogIn</h1>
+    <section class="formulario">
+        <form action="/usuario/loguearse" method="POST">
+          
+            <!--Mensaje error email-->
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <%= errors.email.msg %>
+                </div>
+            <% } %>
+            <!--Input email-->
+            <div>
+                <label for="email">Email</label>
+                <i class="gg-mail"></i>
+                <input type="email" name="email" id="" placeholder="example@email.com">
+                <i class="gg-check-o"></i>
+                <i class="gg-close-o"></i>
+            </div>
+
+            <!--Input password-->
+            <div>
+                <label for="password">Contraseña</label>
+                <i class="gg-lock"></i>
+                <input type="password" name="password" id="password" placeholder="*****">
+                <i class="gg-check-o"></i>
+                <i class="gg-close-o"></i>
+            </div>
+            <!-- Ver contraseña -->
+            <input type="checkbox" id="ver" name="ver" onChange="seePassword()">Ver contraseña
+                <!-- <i class="gg-eye">Ver Contraseña</i> -->
+
+                <script src="/js/seePassword.js"></script>
+
+            <!--Recordar Usuario-->
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+            </label>
+
+            <!--Button create-->
+            <button type="submit" value="send" class="button">Iniciar Sesión</button>
+        </form>
+    </section>
+</body>
+</html>

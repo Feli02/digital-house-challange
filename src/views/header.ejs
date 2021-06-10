@@ -1,0 +1,24 @@
+<header>
+    <div class="main-header">
+        <picture>
+            <a href="/"><img src="/images/logo_transparent.png" alt="logo"></a>
+        </picture>
+    
+        <nav class="nav-header">
+            <ul class="ul-header">
+                <% if (locals.isLogged) { %>
+                    <li><a href="/usuario/perfil">Perfil</a></li>
+                <% } else {%>
+                    <li><a href="/usuario/ingresar">Ingresar</a></li>
+                    <li><a href="/usuario/registro">Registrarse</a></li>
+                <% } %>
+
+                <% if (locals.userRol != 0 && locals.isLogged) { %>
+                    <li><a href="/movies/add">Crear Movie</a></li>
+                    <li><a href="/allUsuarios">Ver Usuarios</a></li>
+                <% } %>
+
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('./headPartial')%> 
+
+    <title>Digital Movies: <%= Movie.title%></title>
+</head>
+<body>
+    <%- include('./header')%> 
+    <h1 class="titulo">Editando:  <%= Movie.title %></h1>
+    <section class="formulario">
+        <form action="/movies/update/<%= Movie.id %>" method="POST">
+
+
+
+            <% if (locals.errors && errors.title) { %>
+                <div class="text-danger">
+                    <%= errors.title.msg %> 
+                </div>
+            <% } %>
+            <label for="title">Título </label>
+            <p><input type="text" name="title" id="title" value="<%= Movie.title %>" required></p>
+
+
+
+            <% if (locals.errors && errors.rating) { %>
+                <div class="text-danger">
+                    <%= errors.rating.msg %> 
+                </div>
+            <% } %>
+            <label for="rating">Rating </label>
+            <p><input type="number" name="rating" id="rating" value="<%= Movie.rating %>" required></p>
+
+
+
+            <% if (locals.errors && errors.awards) { %>
+                <div class="text-danger">
+                    <%= errors.awards.msg %> 
+                </div>
+            <% } %>
+            <label for="awards">Premios </label>
+            <p><input type="number" name="awards" id="awards" value="<%= Movie.awards %>" required></p>
+
+
+
+            <% if (locals.errors && errors.release_date) { %>
+                <div class="text-danger">
+                    <%= errors.release_date.msg %> 
+                </div>
+            <% } %>
+            <label for="release_date">Estreno</label>
+            <p><input type="date" name="release_date" id="release_date" value="<%= Movie.release_date %>" required></p>
+
+
+            <% if (locals.errors && errors.length) { %>
+                <div class="text-danger">
+                    <%= errors.length.msg %> 
+                </div>
+            <% } %>
+            <label for="length">Duración</label>
+            <p><input type="number" name="length" id="" value="<%= Movie.length %>" required></p>
+            
+
+
+            <% if (locals.errors && errors.genre_id) { %>
+                <div class="text-danger">
+                    <%= errors.genre_id.msg %> 
+                </div>
+            <% } %>
+            <label for="genre_id">Género</label>
+            <select name="genre_id" required>
+                <% if(Movie.genres){ %>
+                    <option value="<%= Movie.genre_id %>"><%= Movie.genres.name %></option>
+                <% } %>
+                <option value="1">Comedia</option>
+                <option value="2">Terror</option>
+                <option value="3">Drama</option>
+                <option value="4">Acción</option>
+                <option value="5">Ciencia Ficcion</option>
+                <option value="6">Suspenso</option>
+                <option value="7">Animación</option>
+                <option value="8">Aventuras</option>
+                <option value="9">Documental</option>
+                <option value="10">Infantiles</option>
+                <option value="11">Fantasía</option>
+                <option value="12">Musical</option>
+            </select>
+
+            <p> <button class="botonAgregar" type="submit">Actualizar</button>
+        
+            <a  class="botonVolver" href="/">Home</a></p>
+        </form>
+    </section>
+</body>
+</html>

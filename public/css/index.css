@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Heebo', sans-serif;
+    background: #fefae0;
+}
+
+main{
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header, .picture-cont{
+    width: 100%;
+    text-align: center;
+    background: #30434e;
+}
+
+.ul-actors{
+    margin-left: 80px;
+}
+
+.ul-actors li{
+    margin-bottom: 10px;
+}
+
+p{
+    margin-bottom: 15px;
+}
+
+
+.text-danger{
+    font-size: 10px;
+    color: red;
+}
+
+.users-list{
+    list-style: none;
+}
+
+.admin{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}

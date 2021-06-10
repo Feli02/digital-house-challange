@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('./headPartial')%> 
+
+    <title>Digital Movies: <%= movie.title%></title>
+</head>
+<body>
+    <%- include('./header')%> 
+<main>
+    <h1><%= movie.title %> </h1>    
+    
+
+
+    <p>Rating: <%= movie.rating %> </p>
+    <p>Premios: <%= movie.awards %> </p>
+    <p>Duración: <%= movie.length + ' min'%> </p>
+    <p>Estreno: <%= movie.release_date %> </p>
+    <p>Género: 
+        <% if(movie.genres){ %>
+            <%= movie.genres.name%>
+        <% }else{ %>
+            -
+        <% } %>
+    </p>
+    <p>Actores:
+        <ul class="ul-actors">
+            <% movie.actors.forEach(actor => { %>
+                <li><%= actor.first_name%>  <%= actor.last_name%></li>
+            <% }) %>
+        </ul>
+    </p>
+
+
+
+    <% if (locals.userRol != 0 && locals.isLogged) { %>
+        <a href="/movies/edit/<%= movie.id %>">Editar</a>
+
+        <form method="POST" action="/movies/delete/<%= movie.id %>">
+        
+            <button type="submit">
+                Eliminar
+            </button>
+        
+        </form>
+    <% } %>
+    
+</main>
+</body>
+</html>
